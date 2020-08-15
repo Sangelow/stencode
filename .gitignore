@@ -36,9 +36,12 @@ bin/*
 build/*
 
 # clangd files
-clangd
+.clangd/*
 compile_commands.json
 *.plist
 
 # Junk files
 test_command
+
+# Test files
+bin/*.png

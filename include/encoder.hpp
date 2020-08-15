@@ -24,6 +24,7 @@ private:
     unsigned width, height;              // size of the image
     lodepng::State state;                // state
     unsigned bpp;                        // bits per pixel
+    unsigned bpc;                        // bits per channel
 
 private:
     void read_image();

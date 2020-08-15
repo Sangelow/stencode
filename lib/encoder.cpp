@@ -51,17 +51,19 @@ void Encoder::run() {
 void Encoder::read_image() {
     std::cout << " - Reading the file: " << settings.input << std::endl;
     readPNG(settings.input, image, width, height, state);
-
     // Check if the image is large enough to store the message
     if (width * height < settings.message.size()*8) {
         std::cout << "Image is too small to store the message!" << std::endl;
         return;
     }
-
     // Get the number of bits per pixel
     bpp = lodepng_get_bpp(&state.info_raw);
     std::cout << " - Detected " << bpp << " bits per pixel" << std::endl;
-
+    // Get the number of channel per bits
+    unsigned n_channels = lodepng_get_channels(&state.info_raw);
+    std::cout << " - Detected " << n_channels << " channels" << std::endl;
+    // Compute the number of bit per channels
+    bpc = bpp/n_channels;
 }
 
 
@@ -89,7 +91,7 @@ void Encoder::distribute_message_randomly(std::vector<unsigned long long>& indic
                 // Get a random pixel
                 pixel = rand() % (height*width);
                 // Convert to bit number in the image
-                index = pixel * (bpp/(8*sizeof(char)));
+                index = pixel * (bpc/(8*sizeof(char)));
                 // Repeat if the pixel is already used
             } while (std::find(indices.begin(), indices.end(), index) != indices.end());
             // Store the new index
@@ -103,7 +105,7 @@ void Encoder::distribute_message_continuously(std::vector<unsigned long long>& i
         for (int j=0; j<8; ++j) {
             // i*8+j corresponds to the pixel in the image
             // then we multiply by the number of byte per pixel
-            indices[i*8+j] = (i*8 + j) * (bpp/(8*sizeof(char)));
+            indices[i*8+j] = (i*8 + j) * (bpc/(8*sizeof(char)));
         }
     }
 }

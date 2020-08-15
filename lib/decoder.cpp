@@ -41,6 +41,11 @@ void Decoder::read_image() {
     // Get the number of bits per pixel
     bpp = lodepng_get_bpp(&state.info_raw);
     std::cout << " - Detected " << bpp << " bits per pixel" << std::endl;
+    // Get the number of channel per bits
+    unsigned n_channels = lodepng_get_channels(&state.info_raw);
+    std::cout << " - Detected " << n_channels << " channels" << std::endl;
+    // Compute the number of bit per channels
+    bpc = bpp/n_channels;
 }
 
 void Decoder::find_message(std::vector<unsigned long long>& indices) {
@@ -65,14 +70,13 @@ void Decoder::find_randomly_distributed_message(std::vector<unsigned long long>&
                 // Get a random pixel
                 pixel = rand() % (height*width);
                 // Convert to bit number in the image
-                index = pixel * (bpp/(8*sizeof(char)));
+                index = pixel * (bpc/(8*sizeof(char)));
                 // Repeat if the pixel is already used
             } while (std::find(indices.begin(), indices.end(), index) != indices.end());
             // Store the new index
             indices[i*8+j] = index;
         }
     }
-
 }
 
 void Decoder::find_continuously_distributed_message(std::vector<unsigned long long>& indices) {
@@ -80,7 +84,7 @@ void Decoder::find_continuously_distributed_message(std::vector<unsigned long lo
         for (int j=0; j<8; ++j) {
             // i*8+j corresponds to the pixel in the image
             // then we multiply by the number of byte per pixel
-            indices[i*8+j] = (i*8 + j) * (bpp/(8*sizeof(char)));
+            indices[i*8+j] = (i*8 + j) * (bpc/(8*sizeof(char)));
         }
     }
 }
