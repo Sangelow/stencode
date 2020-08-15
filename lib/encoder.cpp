@@ -51,21 +51,17 @@ void Encoder::run() {
 void Encoder::read_image() {
     std::cout << " - Reading the file: " << settings.input << std::endl;
     readPNG(settings.input, image, width, height, state);
-
     // Check if the image is large enough to store the message
     if (width * height < settings.message.size()*8) {
         std::cout << "Image is too small to store the message!" << std::endl;
         return;
     }
-
     // Get the number of bits per pixel
     bpp = lodepng_get_bpp(&state.info_raw);
     std::cout << " - Detected " << bpp << " bits per pixel" << std::endl;
-
     // Get the number of channel per bits
     unsigned n_channels = lodepng_get_channels(&state.info_raw);
     std::cout << " - Detected " << n_channels << " channels" << std::endl;
-
     // Compute the number of bit per channels
     bpc = bpp/n_channels;
 }
