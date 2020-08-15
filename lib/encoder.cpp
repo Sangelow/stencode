@@ -61,7 +61,7 @@ void Encoder::read_image() {
     // Compute the number of bit per channels
     bpc = bpp/n_channels;
     // Check if the image is large enough to store the message
-    if (width * height * bpc < settings.message.size()*8) {
+    if (width * height * n_channels < settings.message.size()*8) {
         throw std::range_error("Image is too small to store the message!");
     }
 }
