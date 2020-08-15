@@ -1,0 +1,11 @@
+# WITHOUT SEEDING
+./stencode -m "Bonjour, j'espère que personne ne trouvera ce message."
+./stdecode -l 55 -i output.png
+
+# WITH SEEDING
+./stencode -s 5 -m "Bonjour, j'espère que personne ne trouvera ce message."
+./stdecode -s 5 -l 55 -i output.png 
+
+# WITH RANDOM SEEDING
+./stencode -r -m "Bonjour, j'espère que personne ne trouvera ce message."
+./stdecode -s <seed> -l 54 -i output.png 

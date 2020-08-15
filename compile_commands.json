@@ -1,0 +1,116 @@
+[
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
+            "build/encoder.o",
+            "lib/encoder.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "lib/encoder.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
+            "build/lodepng.o",
+            "lib/lodepng.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "lib/lodepng.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
+            "build/decoder.o",
+            "lib/decoder.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "lib/decoder.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
+            "build/stdecode.o",
+            "source/stdecode.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "source/stdecode.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
+            "build/pngtools.o",
+            "lib/pngtools.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "lib/pngtools.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
+            "build/stencode.o",
+            "source/stencode.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "source/stencode.cpp"
+    }
+]
