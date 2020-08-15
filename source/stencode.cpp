@@ -3,12 +3,6 @@
 #include "cxxopts.hpp"
 #include "encoder.hpp"
 
-// TODO:
-//  - Encoate a test from a text file (or simply use pipes in the terminal)
-//  - Encode an file instead of a message (from its binaries ?)
-//  - Encode in the least significant bit of each channel (or a particular channel)
-
-
 int main(int argc, char **argv) {
     // Display title
     std::cout << "\033[1mStenography - Encoder\033[0m"<< std::endl;
