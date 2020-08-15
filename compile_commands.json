@@ -12,6 +12,25 @@
             "-Iinclude",
             "-pedantic",
             "-o",
+            "build/stencode.o",
+            "source/stencode.cpp"
+        ],
+        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
+        "file": "source/stencode.cpp"
+    },
+    {
+        "arguments": [
+            "g++",
+            "-c",
+            "-Wall",
+            "-g",
+            "-O3",
+            "-std=c++11",
+            "-J",
+            "4",
+            "-Iinclude",
+            "-pedantic",
+            "-o",
             "build/encoder.o",
             "lib/encoder.cpp"
         ],
@@ -31,11 +50,11 @@
             "-Iinclude",
             "-pedantic",
             "-o",
-            "build/lodepng.o",
-            "lib/lodepng.cpp"
+            "build/decoder.o",
+            "lib/decoder.cpp"
         ],
         "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
-        "file": "lib/lodepng.cpp"
+        "file": "lib/decoder.cpp"
     },
     {
         "arguments": [
@@ -50,11 +69,11 @@
             "-Iinclude",
             "-pedantic",
             "-o",
-            "build/decoder.o",
-            "lib/decoder.cpp"
+            "build/lodepng.o",
+            "lib/lodepng.cpp"
         ],
         "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
-        "file": "lib/decoder.cpp"
+        "file": "lib/lodepng.cpp"
     },
     {
         "arguments": [
@@ -93,24 +112,5 @@
         ],
         "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
         "file": "lib/pngtools.cpp"
-    },
-    {
-        "arguments": [
-            "g++",
-            "-c",
-            "-Wall",
-            "-g",
-            "-O3",
-            "-std=c++11",
-            "-J",
-            "4",
-            "-Iinclude",
-            "-pedantic",
-            "-o",
-            "build/stencode.o",
-            "source/stencode.cpp"
-        ],
-        "directory": "/home/floiseau/Dropbox/Scripts/cpp/stenography_image",
-        "file": "source/stencode.cpp"
     }
 ]
