@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# Binaries
+bin/*
+build/*
+
+# clangd files
+compile_commands.json
+*.plist
+
+# Junk files
+test_command
