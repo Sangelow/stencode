@@ -42,3 +42,6 @@ compile_commands.json
 
 # Junk files
 test_command
+
+# Test files
+bin/*.png
