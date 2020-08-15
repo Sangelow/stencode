@@ -9,11 +9,11 @@ int main(int argc, char **argv) {
     std::cout << "\033[1mStenography - Decoder\033[0m"<< std::endl;
 
     // Generate parser options
-    cxxopts::Options options("test", "A brief description");
+    cxxopts::Options options("stdecode", "Decode a file encoded inside a png file");
     options.add_options()
-        ("i,input", "Input file name",                                              cxxopts::value<std::string>()->default_value("input.png"))
-        ("l,length", "Length of the message to decode",                             cxxopts::value<unsigned long long>()->default_value("0"))
-        ("s,seed", "Seed of the pseudo-random number generator (0 if none)",        cxxopts::value<unsigned long long>()->default_value("0"))
+        ("i,input", "Input png image file name",                                cxxopts::value<std::string>()->default_value("input.png"))
+        ("l,length", "Length of the message/file to decode",                    cxxopts::value<unsigned long long>()->default_value("0"))
+        ("s,seed", "Seed of the pseudo-random number generator (0 if none)",    cxxopts::value<unsigned long long>()->default_value("0"))
         ("h,help", "Print usage")
         ;
 
