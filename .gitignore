@@ -36,6 +36,7 @@ bin/*
 build/*
 
 # clangd files
+clangd/*
 compile_commands.json
 *.plist
 
