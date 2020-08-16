@@ -40,7 +40,7 @@ $ ./stencode -i input.png -m "Here is a message encoded inside an image." -o out
 The `-i` argument is the name of the input png file, the `-m` argument corresponds to the message to encode and the `-o` argument corresponds to the name of the output file. Note that the name given in this exemple are the default names in the command and could be removed (it is equivalent to: `./stencode -m "Here is a message encoded inside an image."`).
 
 Once run, this command should display:
-```shell
+```
 Stenography - Encoder
  - Length of the message: 42
  - Start the encoding
@@ -61,7 +61,7 @@ $ ./stdecode -l 42 -i output.png
 ```
 The `-i` argument is the name of the png file containing the message and the `-l` argument corresponds length of the message. The output of the following command is (used after the endoding command) is:
 
-```shell
+```
 Stenography - Decoder
  - Length of the message: 42
  - Start the decoding
@@ -83,7 +83,7 @@ $ ./stencode -s 12345 -m "Here is a message encoded inside an image."
 ```
 
 The output of the command is:
-```shell
+```
 Stenography - Encoder
  - Length of the message: 42
  - Start the encoding
@@ -106,7 +106,7 @@ $ ./stdecode -s 12345 -l 42 -i output.png
 ```
 
 The output is:
-```shell
+```
 Stenography - Decoder
  - Length of the message: 42
  - Start the decoding
