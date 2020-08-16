@@ -9,3 +9,7 @@
 # WITH RANDOM SEEDING
 ./stencode -r -m "Bonjour, j'espère que personne ne trouvera ce message."
 ./stdecode -s <seed> -l 54 -i output.png 
+
+# WITH RANDOM SEEDING AND FILE
+cat test_file.txt | ./stencode -r -m
+./stdecode -s <seed> -l 54 -i output.png 
